@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Public Sans', sans-serif;
+  @apply bg-slate-100 text-gray-900;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  @apply text-sm md:text-base;
+}
+h1 {
+  @apply text-6xl;
+}
+h2 {
+  @apply text-3xl;
+}
+h3 {
+  @apply text-2xl;
+}
+h4 {
+  @apply text-xl;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-emerald-700;
+}
+
+.slider-controler div {
+  @apply h-10 w-10 rounded-md p-1 shadow shadow-black/40 backdrop-blur-sm after:hidden 2xl:h-14 2xl:w-14;
+}
+
+.icon-prev {
+  @apply duration-200 hover:scale-110 active:-translate-x-2 active:scale-75 active:text-teal-500;
+}
+.icon-next {
+  @apply duration-200 hover:scale-110 active:translate-x-2 active:scale-75 active:text-teal-500;
+}
+
+@layer components {
+  .navlink div {
+    @apply relative after:absolute after:bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:bg-gradient-to-r after:from-indigo-500 after:from-5% after:via-sky-500 after:via-30% after:to-primary after:to-90% after:duration-300;
+  }
+  .navlink.active div {
+    @apply font-semibold after:w-full;
+  }
+
+  .tabs.active div {
+    @apply bg-slate-400 text-gray-900 after:absolute after:inset-0 after:h-1 after:w-full after:bg-emerald-700;
+  }
+
+  .modal-users input,
+  .modal-users textarea,
+  .modal-users .pclass {
+    @apply block w-full appearance-none border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0;
+  }
+  .modal-users label {
+    @apply absolute start-1 top-2 z-10 origin-[0] -translate-y-4 scale-75 transform bg-white px-2 text-sm text-gray-500 duration-300;
+  }
+}
